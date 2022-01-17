@@ -4,11 +4,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Host.ConfigureAppConfiguration((_, configuration) =>
 {
-    configuration.AddVaultConfiguration();
+    configuration.AddVaultConfiguration(builder.Environment.EnvironmentName);
 });
 
 // Add services to the container.
-
+var connectionstring = builder.Configuration.GetSection("name").Value;
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -26,7 +26,7 @@ namespace VaultNETClient
             vaultOptions.SecretsPath = tempConfig.GetSection("vault:secretsPath")?.Value?? throw new ArgumentNullException($"secretsPath cannot be empty");
             if(environment !=null)
             {
-                vaultOptions.SecretsPath = $"{vaultOptions.SecretsPath}/{environment}";
+                vaultOptions.SecretsPath = $"{vaultOptions.SecretsPath}/{environment.ToLower()}";
             }
             var vaultClient = new VaultClient(vaultOptions);
 

@@ -25,11 +25,18 @@ namespace VaultNETClient
         }
         public async Task<Dictionary<string, string>> GetSecrets(string path)
         {
-            // Making the HTTP Get call to consult our Secret
-            JObject json = JObject.Parse(await HttpClient.GetStringAsync(path));
-            JToken secrets = json["data"]["data"];
-            // Storing our key-value pairs to a Dictionary for future data manipulation
-            return JsonConvert.DeserializeObject<Dictionary<string, string>>(secrets.ToString());
+            try
+            {
+                // Making the HTTP Get call to consult our Secret
+                JObject json = JObject.Parse(await HttpClient.GetStringAsync(path));
+                JToken secrets = json["data"]["data"];
+                // Storing our key-value pairs to a Dictionary for future data manipulation
+                return JsonConvert.DeserializeObject<Dictionary<string, string>>(secrets.ToString());
+            }
+            catch
+            {
+                return new Dictionary<string, string>();
+            }
         }
     }
 }

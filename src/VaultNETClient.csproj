@@ -3,8 +3,8 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<PackageVersion>1.0.2-alpha</PackageVersion>
-		<Version>1.0.2-alpha</Version>
+		<PackageVersion>1.0.3-alpha</PackageVersion>
+		<Version>1.0.3-alpha</Version>
 		<Authors>Kiran Joy</Authors>
 		<Product>VaultNET</Product>
 		<Description >A simple .net client for Hashicorp Vault</Description>

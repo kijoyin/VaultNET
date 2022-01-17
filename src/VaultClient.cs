@@ -21,7 +21,7 @@ namespace VaultNETClient
         {
             _ = string.IsNullOrEmpty(_secretsPath) ? throw new ArgumentException($"{nameof(_secretsPath)} cannot be empty"):true;
 
-            return await GetSecrets(_secretsPath);
+            return await GetSecrets(_secretsPath); 
         }
         public async Task<Dictionary<string, string>> GetSecrets(string path)
         {
